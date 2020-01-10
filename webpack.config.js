@@ -2,10 +2,13 @@ const path = require('path');
 
 const outputPath = path.resolve(__dirname, 'dist');
 
-module.exportds = {
-    entry: './src/index.js',   // webpackのエントリーポイントという設定ができる。エントリーポイントとは、モジュールバンドルの対象となるもののこと。つまり、何をモジュールバンドルするのかという対象物の設定に関することをエントリーで行うことができる。
-    output: {  // どこに出力するのかという設定。
-        filename: 'main.js',  // このファイルネームに出力
-        path: outputPath  // 出力先のパス
+module.exports = {
+    entry: './src/index.js',
+    output: {
+        filename: 'main.js',
+        path: outputPath
+    },
+    devServer: {
+	contentBase: outputPath,
     }
 }
